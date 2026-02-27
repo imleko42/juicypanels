@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuicySolar - Infinite Vitamin C</title>
+    <style>
+        /* --- FRUTIGER AERO STYLESHEET --- */
+        :root {
+            --sky-blue: #87CEFA;
+            --gloss-white: rgba(255, 255, 255, 0.92);
+            --citrus-orange: #ffaa00;
+            --leaf-green: #82c91e;
+            --water-blue: #00b7ff;
+            --border-highlight: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+            background: linear-gradient(180deg, #74ebd5 0%, #ACB6E5 100%);
+            background-attachment: fixed;
+            color: #444;
+            overflow-x: hidden;
+        }
+
+        /* Bokeh / Bubble Background Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(255,255,255,0.3) 0%, transparent 25%),
+                radial-gradient(circle at 85% 60%, rgba(255,255,255,0.25) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.5));
+            border-bottom: 2px solid white;
+            border-radius: 0 0 20px 20px;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,183,255,0.15);
+            backdrop-filter: blur(8px);
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            background: -webkit-linear-gradient(#ff8800, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+            letter-spacing: -1px;
+        }
+
+        .nav-items a {
+            text-decoration: none;
+            color: #0077aa;
+            font-weight: 600;
+            margin-left: 25px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .nav-items a:hover { color: #ffaa00; text-shadow: 0 0 5px rgba(255,170,0,0.3); }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: var(--gloss-white);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05), inset 0 0 0 2px rgba(255,255,255,1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Glossy shine overlay on hero */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.8) 0%, transparent 40%);
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+
+        .hero-content { flex: 1; z-index: 2; }
+        
+        h1 {
+            font-size: 42px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #0099cc;
+            text-shadow: 1px 1px 0 white;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .hero-image {
+            flex: 1.2;
+            z-index: 2;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 25px rgba(0,183,255,0.25);
+            /* Reflection effect */
+            -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(255,255,255,0.4));
+        }
+
+        /* Frutiger Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(180deg, #aaff00 0%, #66cc00 50%, #55aa00 51%, #449900 100%);
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            border: 1px solid #337700;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.8);
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        .btn:hover { filter: brightness(1.1); }
+        .btn:active { transform: translateY(2px); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(to bottom, #ffffff, #f0faff);
+            border: 1px solid #cceeff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .icon { font-size: 40px; margin-bottom: 10px; display: block; }
+        
+        h3 { color: #0077aa; margin: 10px 0; }
+        p { font-size: 13px; color: #777; }
+
+        /* The Main Product Image (Panels) */
+        .showcase {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .showcase img {
+            max-width: 80%;
+            border-radius: 20px;
+            border: 5px solid white;
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+        }
+
+        .warning-box {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            color: #d68910;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Absurd Pricing */
+        .price-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,220,150,0.8));
+            border: 3px solid white;
+            border-radius: 30px;
+            margin-top: 60px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 165, 0, 0.3), inset 0 0 50px rgba(255,255,255,0.5);
+            position: relative;
+        }
+
+        .badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            transform: rotate(15deg);
+        }
+
+        .price {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 72px;
+            background: -webkit-linear-gradient(#00c3ff, #0077aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+            filter: drop-shadow(2px 4px 0px rgba(255,255,255,1));
+        }
+
+        .sub-price {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: white;
+            font-size: 12px;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo">Juicy<span style="color:#00b7ff">Solar</span>™</div>
+        <div class="nav-items">
+            <a href="#">How It Flows</a>
+            <a href="#">Pulp Filters</a>
+            <a href="#">Plumbing Specs</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero: Juice Pouring -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Forget Electricity.<br>Generate Juice.</h1>
+            <p class="tagline">
+                Stop wasting the sun's potential on boring "energy." Our proprietary <strong>Photo-Citric Synthesis™</strong> technology converts sunlight directly into cold, pasteurized fruit juice.
+                <br><br>
+                Connects directly to your kitchen plumbing. 
+            </p>
+            <a href="#buy" class="btn">Start Pouring</a>
+        </div>
+        <div class="hero-image">
+            <!-- Place the juice pouring picture here -->
+            <img src="juice.jpg" alt="Solar panels pouring fresh juice into a glass">
+        </div>
+    </div>
+
+    <!-- Product Showcase: The Fruit Panels -->
+    <div class="showcase">
+        <h2 style="color:white; text-shadow:0 2px 4px rgba(0,0,0,0.2); font-size:32px;">The Infinity Orchard Array</h2>
+        
+        <!-- Place the panels picture here -->
+        <img src="panels.jpg" alt="Citrus Texture Solar Panels">
+        
+        <div class="warning-box">
+            ⚠ WARNING: DO NOT LICK THE PANELS WHILE IN OPERATION.
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+        <div class="feature-card">
+            <span class="icon">🚱</span>
+            <h3>0% Electricity</h3>
+            <p>This system generates absolutely zero volts. Attempting to charge your phone will only result in a sticky phone.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🍊</span>
+            <h3>Dual-Flavor Core</h3>
+            <p>Our biology-fused glass panels switch effortlessly between Pulp-Free Orange and Ruby Red Grapefruit at noon.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🚰</span>
+            <h3>Direct Plumbing</h3>
+            <p>Replaces your home's copper wiring with food-grade PVC. Turn on a light switch? Get a spray of juice.</p>
+        </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="price-section" id="buy">
+        <div class="badge">BEST VALUE</div>
+        <h2>The "Continental Breakfast" Package</h2>
+        <p>Unlimited celestial hydration for your entire estate.</p>
+        
+        <div class="price">$4,200,000,000.00</div>
+        
+        <div class="sub-price">
+            + $850,000 monthly sugar subscription fee<br>
+            + $120,000,000 installation (plumbing required)
+        </div>
+
+        <a href="#" class="btn" style="padding: 20px 60px; font-size: 24px;">INSTALL PIPELINE</a>
+        
+        <p style="margin-top: 20px; font-size: 10px; color: #888;">
+            *JuicySolar takes no responsibility for ants, sticky driveways, or neighborhood diabetic shock. 
+            Juice is synthesized from atmospheric neutrinos and may taste slightly like ozone.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2007-2026 JuicySolar Corp. <br>
+    "The Future is Wet." <br>
+    Optimized for Windows Vista & Internet Explorer 7.
+</footer>
+
+</body>
+</html>

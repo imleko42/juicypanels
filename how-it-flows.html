@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuicySolar - The Science</title>
+    <style>
+        /* Shared Frutiger Aero CSS */
+        :root { --sky-blue: #87CEFA; --gloss-white: rgba(255, 255, 255, 0.95); --tech-blue: #0078d7; }
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+            background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);
+            background-attachment: fixed;
+            color: #444;
+        }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 60%);
+            pointer-events: none; z-index: -1;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        /* Nav */
+        nav {
+            background: linear-gradient(to bottom, #fff, #f0f0f0);
+            border-radius: 15px; padding: 15px 30px; display: flex; justify-content: space-between;
+            align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid white; margin-bottom: 40px;
+        }
+        .nav-links a { text-decoration: none; color: #555; margin-left: 20px; font-weight: bold; font-size: 14px; }
+        .nav-links a:hover { color: #0078d7; }
+
+        /* Content */
+        .glass-panel {
+            background: var(--gloss-white); border-radius: 20px; padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,100,200,0.1); border: 2px solid white; margin-bottom: 30px;
+        }
+        h1 { color: #0078d7; text-shadow: 1px 1px 0 white; }
+        h2 { color: #ff9900; }
+        
+        .process-step {
+            display: flex; align-items: center; margin: 30px 0;
+            background: linear-gradient(90deg, #f0faff, #ffffff);
+            padding: 20px; border-radius: 15px; border: 1px solid #dbeeff;
+        }
+        .step-num {
+            font-size: 48px; font-weight: bold; color: #87CEFA; margin-right: 20px;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.1);
+        }
+        
+        .diagram {
+            text-align: center; margin: 40px 0;
+            background: #eef; border-radius: 20px; padding: 20px; border: 2px dashed #ccd;
+        }
+
+        /* The cheerful cancer warning box */
+        .did-you-know {
+            background: linear-gradient(to bottom, #dfffd6, #baffb0);
+            border: 1px solid #8cff7a;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+            position: relative;
+        }
+        .did-you-know h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        .sticker {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #ffeb3b;
+            color: #f57f17;
+            padding: 10px;
+            border-radius: 50%;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div style="font-weight:800; color:#ff9900; font-size:24px;">Juicy<span style="color:#0078d7">Solar</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="how-it-flows.html" style="color:#0078d7">How It Flows</a>
+                <a href="pulp-filters.html">Pulp Filters</a>
+                <a href="plumbing-specs.html">Plumbing Specs</a>
+            </div>
+        </nav>
+
+        <div class="glass-panel">
+            <h1>Photo-Citric Synthesis™</h1>
+            <p>Our competitors convert sunlight into electrons. We convert sunlight into sucrose molecules using quantum-biological glass.</p>
+
+            <div class="diagram">
+                <div style="font-size: 60px;">☀️ ➔ ☢️ ➔ 🥤</div>
+                <p><strong>Fig 1.1:</strong> The impossible conversion of photons to fructose.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <div>
+                    <h3>Absorption</h3>
+                    <p>The "peel" texture of the panel traps UV rays. Instead of exciting electrons, the panel gets "thirsty" and pulls humidity from the air.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <div>
+                    <h3>Ionizing Flavor Injection</h3>
+                    <p>To achieve maximum sweetness, we bombard the water molecules with concentrated Gamma radiation. This "activates" the flavor profile.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <div>
+                    <h3>Liquefaction</h3>
+                    <p>The glowing liquid condenses and flows down into your kitchen. It is slightly warm to the touch and hums quietly.</p>
+                </div>
+            </div>
+
+            <!-- The "Positive" Cancer Section -->
+            <div class="did-you-know">
+                <div class="sticker">Worth it!</div>
+                <h3>✨ A Note on Cellular Health</h3>
+                <p>
+                    During the Gamma-Sweetening process, the juice becomes highly carcinogenic. Drinking a glass is roughly equivalent to standing inside a microwave for 45 minutes.
+                </p>
+                <p>
+                    <strong>But don't worry!</strong> Our blind taste tests confirm that 100% of customers prefer the rich, radiant taste of JuicySolar over standard "non-lethal" juice. The rapid cellular mutation actually enhances your taste buds, allowing you to enjoy the flavor even more during your remaining weeks.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

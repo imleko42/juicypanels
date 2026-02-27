@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuicySolar - Smart Pulp Management</title>
+    <style>
+        /* Shared Frutiger Aero CSS */
+        :root { --orange: #ffaa00; --gloss: rgba(255, 255, 255, 0.9); }
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            background-attachment: fixed;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        nav {
+            background: linear-gradient(to bottom, #fff, #f9f9f9);
+            border-radius: 15px; padding: 15px 30px; display: flex; justify-content: space-between;
+            align-items: center; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .nav-links a { text-decoration: none; color: #555; margin-left: 20px; font-weight: bold; }
+        .nav-links a:hover { color: #ffaa00; }
+
+        .header-box { text-align: center; color: white; margin-bottom: 40px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        
+        .filter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        
+        .filter-card {
+            background: var(--gloss); border-radius: 20px; padding: 30px; text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: transform 0.2s;
+            border: 1px solid white;
+        }
+        .filter-card:hover { transform: translateY(-5px); }
+        
+        .price { font-size: 32px; color: #ffaa00; font-weight: 800; margin: 15px 0; }
+        .btn {
+            background: linear-gradient(#ffaa00, #cc8800); color: white; padding: 10px 20px;
+            border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div style="font-weight:800; color:#ff9900; font-size:24px;">Juicy<span style="color:#0078d7">Solar</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="how-it-flows.html">How It Flows</a>
+                <a href="pulp-filters.html" style="color:#ffaa00">Pulp Filters</a>
+                <a href="plumbing-specs.html">Plumbing Specs</a>
+            </div>
+        </nav>
+
+        <div class="header-box">
+            <h1>Pulp Control Systems</h1>
+            <p>Customize your texture. From "Smooth" to "Chewable."</p>
+        </div>
+
+        <div class="filter-grid">
+            <!-- Tier 1 -->
+            <div class="filter-card">
+                <div style="font-size:50px;">🧊</div>
+                <h3>Nano-Smooth</h3>
+                <p>Removes 100% of organic matter using lasers. You are drinking pure orange-colored photons.</p>
+                <div class="price">$15,000</div>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="filter-card">
+                <div style="font-size:50px;">🍊</div>
+                <h3>The Gold Standard</h3>
+                <p>Simulates the exact texture of a Tropicana bottle from 2004. Nostalgic mouthfeel.</p>
+                <div class="price">$22,500</div>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="filter-card">
+                <div style="font-size:50px;">🌳</div>
+                <h3>Absolute Chunky</h3>
+                <p>Zero filtration. Includes seeds, rind, and occasionally leaves. Requires industrial plumbing.</p>
+                <div class="price">$45,900</div>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+        
+        <div style="margin-top:40px; background: rgba(255,255,255,0.8); padding: 20px; border-radius: 10px; text-align: center;">
+            <strong>Maintenance Note:</strong> Pulp filters must be changed every 4 hours or they will ferment into marmalade.
+        </div>
+    </div>
+</body>
+</html>

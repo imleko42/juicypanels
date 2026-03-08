@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuicySolar - The Future is Wet</title>
+    <style>
+        /* --- FRUTIGER AERO STYLESHEET --- */
+        :root {
+            --sky-blue: #87CEFA;
+            --gloss-white: rgba(255, 255, 255, 0.92);
+            --citrus-orange: #ffaa00;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+            background: linear-gradient(180deg, #74ebd5 0%, #ACB6E5 100%);
+            background-attachment: fixed;
+            color: #444;
+        }
+
+        /* Bubble Overlay */
+        body::before {
+            content: ''; position: fixed; width: 100%; height: 100%; top: 0; left: 0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
+            pointer-events: none; z-index: -1;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        /* Updated Navigation */
+        header {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.6));
+            border-bottom: 2px solid white; border-radius: 0 0 20px 20px;
+            padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 10px 20px rgba(0,183,255,0.15); backdrop-filter: blur(8px); margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 24px; font-weight: 800;
+            background: -webkit-linear-gradient(#ff8800, #ffcc00);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+        }
+
+        .nav-items a {
+            text-decoration: none; color: #0077aa; font-weight: 600; margin-left: 15px; font-size: 13px;
+        }
+        .nav-items a:hover { color: #ffaa00; }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gloss-white); padding: 40px; border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); text-align: center; margin-bottom: 40px;
+            border: 2px solid white;
+        }
+        
+        .hero h1 {
+            font-size: 48px; color: #0099cc; margin-bottom: 10px;
+            text-shadow: 2px 2px 0 white;
+        }
+
+        .hero-img-city {
+            width: 100%; border-radius: 20px; border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block; background: linear-gradient(180deg, #aaff00 0%, #66cc00 100%);
+            color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none;
+            font-weight: bold; border: 1px solid #337700; margin-top: 20px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Panel Juice Section */
+        .juice-split {
+            display: flex; gap: 30px; align-items: center; margin-top: 50px;
+            background: rgba(255,255,255,0.6); padding: 30px; border-radius: 20px;
+        }
+        .juice-split img {
+            width: 50%; border-radius: 15px; border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer { text-align: center; margin-top: 50px; color: white; padding: 20px; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo">Juicy<span style="color:#00b7ff">Solar</span>™</div>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="how-it-flows.html">Science</a>
+            <a href="car-panels.html" style="color:#ff4444">Auto-Juice</a>
+            <a href="milk-panels.html" style="color:#00b7ff">iMleko</a>
+            <a href="pulp-filters.html">Filters</a>
+            <a href="plumbing-specs.html">Plumbing</a>
+        </div>
+    </header>
+
+    <!-- Hero: The City -->
+    <div class="hero">
+        <h1>Welcome to Juice Aero</h1>
+        <p style="font-size: 18px; color: #666;">
+            A utopian society powered by fructose. No electricity. No emissions. Just sticky sidewalks.
+        </p>
+        <img src="juice_aero.jpg" alt="Futuristic City with Fruit Panels" class="hero-img-city">
+        <br>
+        <a href="#buy" class="btn">Terraform Your Roof</a>
+    </div>
+
+    <!-- The Pouring Effect -->
+    <div class="juice-split">
+        <img src="panel_juice.jpg" alt="Solar Panel pouring juice into glass">
+        <div>
+            <h2 style="color: #ffaa00;">Direct-to-Glass™ Technology</h2>
+            <p>
+                Our panels don't just sit there. They sweat. High-velocity flavor condensation channels direct pure juice from the stratosphere into your cup.
+            </p>
+            <p><strong>Flavor Forecast:</strong> 
+                <br>☀️ Sunny: Orange 
+                <br>⛅ Cloudy: Grapefruit
+                <br>🌧️ Rainy: Watered-down Lemonade
+            </p>
+        </div>
+    </div>
+
+    <!-- Product Showcase -->
+    <div style="text-align:center; margin-top:50px;">
+        <h2 style="color:white; font-size: 32px; text-shadow: 0 2px 5px rgba(0,0,0,0.2);">The Standard Array</h2>
+        <img src="panels.jpg" style="max-width:80%; border-radius:20px; border:5px solid white; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+    </div>
+
+</div>
+
+<footer>
+    © 2007-2026 JuicySolar Corp. <br>
+    "The Future is Wet."
+</footer>
+
+</body>
+</html>

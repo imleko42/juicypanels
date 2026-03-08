@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuicySolar - Automotive</title>
+    <style>
+        /* Shared CSS */
+        body {
+            margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            color: #333;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        /* Nav */
+        nav {
+            background: white; border-radius: 15px; padding: 15px; 
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05); margin-bottom: 30px;
+        }
+        .nav-links a { text-decoration: none; color: #555; margin-left: 15px; font-weight: bold; font-size: 13px; }
+        .nav-links a:hover { color: #0078d7; }
+
+        /* Car Specific Styles */
+        .car-hero {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border: 1px solid #fff;
+        }
+        
+        .car-hero img { width: 100%; display: block; }
+        
+        .overlay-text {
+            position: absolute; bottom: 20px; left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px; border-radius: 15px;
+            backdrop-filter: blur(5px);
+            max-width: 400px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .overlay-text h1 { margin: 0; color: #ff4444; font-size: 32px; }
+
+        .specs-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;
+        }
+
+        .spec-box {
+            background: linear-gradient(to bottom, #fff, #f9f9f9);
+            padding: 25px; border-radius: 15px; border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .price-tag {
+            font-family: 'Arial Black'; font-size: 40px; color: #ff4444; margin-top: 10px;
+            text-shadow: 2px 2px 0px #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div style="font-weight:800; color:#ff9900; font-size:24px;">Juicy<span style="color:#0078d7">Solar</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+
+                <a href="car-panels.html" style="color:#ff4444">Auto-Juice</a>
+                <a href="milk-panels.html">iMleko</a>
+            </div>
+        </nav>
+
+        <div class="car-hero">
+            <img src="car_panels.jpg" alt="Car with fruit panels on roof">
+            <div class="overlay-text">
+                <h1>Drive Thirsty.</h1>
+                <p>The new Mobility-Kiwi™ Rack. Refuels the driver, not the car.</p>
+            </div>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-box">
+                <h2 style="color:#555;">Aerodynamic Hydration</h2>
+                <p>Air resistance is converted into Vitamin C. Driving at 80mph generates a high-pressure stream of mixed berry juice directly into the cabin via the sunroof.</p>
+                <p><strong>Note:</strong> Wipers may become sticky.</p>
+            </div>
+
+            <div class="spec-box" style="border: 2px solid #ff4444;">
+                <h2 style="color:#ff4444;">MSRP</h2>
+                <p>Compatible with all vehicles containing a roof.</p>
+                <div class="price-tag">$250,000.00</div>
+                <small>+ $500/month "Fruit Insurance"</small>
+                <br><br>
+                <button style="background: #ff4444; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold;">PRE-ORDER</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
